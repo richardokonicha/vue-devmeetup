@@ -1,28 +1,41 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
-</template>
+  <v-app>
+    <v-app-bar
+      color="blue darken-4"
+      dark
+      app
+    >
+      <v-app-bar-nav-icon/>
+      <v-toolbar-title>Dev Feast</v-toolbar-title>
+    </v-app-bar>
 
+    <v-navigation-drawer v-model="sideNav" app color="blue darken-3" :mini-variant.sync="mini" permanent>
+      <v-list-item>
+        <v-list-item-avatar>
+          <v-img src=""></v-img>
+        </v-list-item-avatar>
+        <v-list-item-title>
+          John Leider
+        </v-list-item-title>
+      </v-list-item>
+      
+      
+    </v-navigation-drawer>
+    <v-content></v-content>
+  </v-app>
+</template>
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+  },
+  data(){
+    return {
+      sideNav: true
+    }
   }
-}
+};
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+
